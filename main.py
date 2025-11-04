@@ -28,8 +28,7 @@ def main() -> None:
             if name and bonus:
                 Skill.objects.get_or_create(
                     name=name,
-                    bonus=bonus,
-                    race=race_obj
+                    defaults={"bonus": bonus, "race": race_obj}
                 )
 
         guild_data = attributes.get("guild")
